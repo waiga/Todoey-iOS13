@@ -46,6 +46,12 @@ class TodoListViewController: UITableViewController {
     //Mark - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // print(itemArray[indexPath.row])
+        //update
+//        itemArray[indexPath.row].setValue("Completed", forKey: "title")
+        //순서가 중요함. context에서 delete 하고 난 뒤에 현재 걸 delete
+//        context.delete(itemArray[indexPath.row])
+//        itemArray.remove(at: indexPath.row)
+        // CRUD, Create, Read, Update, Destory
         
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         saveItems()
