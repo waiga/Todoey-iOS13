@@ -18,6 +18,8 @@ class TodoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        
+        
 
 //        print(dataFilePath)
         loadItems()
@@ -101,6 +103,17 @@ class TodoListViewController: UITableViewController {
             print("Error Fetching Data from context \(error)")
         }
     }
+    
+    
 
 }
 
+//MARK: - Search Bar Methods
+extension TodoListViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        
+        print(searchBar.text!)
+    }
+}
